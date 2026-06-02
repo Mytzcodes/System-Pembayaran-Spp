@@ -2,27 +2,27 @@
 
 Sistem manajemen pembayaran SPP berbasis web menggunakan PHP Native, MySQL, dan vanilla JavaScript.
 
-## 🎯 Fitur Utama
+##  Fitur Utama
 
 ### Role: Admin
-- ✅ Manajemen data siswa (CRUD)
-- ✅ Manajemen data petugas
-- ✅ Manajemen data kelas
-- ✅ Manajemen tarif SPP
-- ✅ Laporan pembayaran dengan visualisasi chart
-- ✅ Export laporan ke CSV
-- ✅ Audit log semua aktivitas
+-  Manajemen data siswa (CRUD)
+-  Manajemen data petugas
+-  Manajemen data kelas
+-  Manajemen tarif SPP
+-  Laporan pembayaran dengan visualisasi chart
+-  Export laporan ke CSV
+-  Audit log semua aktivitas
 
 ### Role: Petugas
-- ✅ Input pembayaran SPP dengan autocomplete siswa
-- ✅ Duplicate payment protection (bulan + tahun)
-- ✅ Cetak bukti pembayaran dengan QR code
-- ✅ Riwayat pembayaran
+-  Input pembayaran SPP dengan autocomplete siswa
+-  Duplicate payment protection (bulan + tahun)
+-  Cetak bukti pembayaran dengan QR code
+-  Riwayat pembayaran
 
 ### Role: Siswa
-- ✅ Lihat profile
-- ✅ Riwayat pembayaran SPP
-- ✅ Total pembayaran
+-  Lihat profile
+-  Riwayat pembayaran SPP
+-  Total pembayaran
 
 ## 🛠️ Teknologi
 
@@ -38,7 +38,7 @@ Sistem manajemen pembayaran SPP berbasis web menggunakan PHP Native, MySQL, dan 
 - Web server (Apache/Nginx) atau PHP built-in server
 - Browser modern (Chrome, Firefox, Edge)
 
-## 🚀 Instalasi & Setup
+##  Instalasi & Setup
 
 ### Metode 1: Quick Start (Recommended)
 
@@ -91,7 +91,7 @@ Sistem manajemen pembayaran SPP berbasis web menggunakan PHP Native, MySQL, dan 
 4. Edit `.env` sesuai konfigurasi
 5. Akses: http://localhost/spp-native/public
 
-## 🔐 Default Credentials
+## Default Credentials Akun
 
 | Role    | Username | Password      |
 |---------|----------|---------------|
@@ -227,10 +227,10 @@ php tests/basic_tests.php
 ```
 
 Test coverage:
-- ✅ Database connection
-- ✅ User authentication
-- ✅ Duplicate payment prevention
-- ✅ Stored procedure execution
+-  Database connection
+-  User authentication
+-  Duplicate payment prevention
+-  Stored procedure execution
 
 ## 🎨 Design System
 
@@ -331,12 +331,10 @@ Untuk pertanyaan atau issue:
 
 ## 📄 License
 
-Educational project - UKK RPL specification
+Noted
 
 ## 🎓 Credits
-
-Developed for UKK (Uji Kompetensi Keahlian) - Rekayasa Perangkat Lunak
-
+Created From User anonym
 ---
 
 **Version**: 1.0.0  
