@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Mock - Sistem SPP</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; background: #F3F4F6; }
+        
+        /* Header - Top navigation bar with logo, title, and user menu */
+        .header {
+            background: white;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        /* Sidebar - Left navigation menu with role-based links */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 60px;
+            width: 250px;
+            height: calc(100vh - 60px);
+            background: white;
+            border-right: 1px solid #E5E7EB;
+            padding: 16px;
+        }
+        
+        /* Main Content - Dashboard cards and tables */
+        .main {
+            margin-left: 250px;
+            padding: 24px;
+        }
+        
+        /* Stats Grid - Three cards showing key metrics */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        /* Stat Card - Individual metric display with icon and value */
+        .card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .card h3 { font-size: 32px; color: #1E3A8A; margin-bottom: 8px; }
+        .card p { color: #6B7280; font-size: 14px; }
+        
+        /* Table - Recent payments list */
+        table {
+            width: 100%;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        th { background: #F3F4F6; font-weight: 600; }
+        
+        /* Annotations - Design notes for developers */
+        .annotation {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            padding: 12px;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER: Contains sidebar toggle, app title, theme toggle, and user menu -->
+    <div class="header">
+        <div>
+            <button>☰</button>
+            <strong>Sistem Pembayaran SPP</strong>
+        </div>
+        <div>
+            <button>🌙</button>
+            <button>admin ▼</button>
+        </div>
+    </div>
+    
+    <!-- SIDEBAR: Role-based navigation menu -->
+    <!-- Validation: Check user role to show appropriate menu items -->
+    <div class="sidebar">
+        <nav>
+            <div style="padding: 12px; background: #EEF2FF; border-radius: 6px; margin-bottom: 8px;">
+                🏠 Dashboard
+            </div>
+            <div style="padding: 12px;">👥 Data Siswa</div>
+            <div style="padding: 12px;">👤 Data Petugas</div>
+            <div style="padding: 12px;">🏫 Data Kelas</div>
+            <div style="padding: 12px;">💵 Data SPP</div>
+            <div style="padding: 12px;">📊 Laporan</div>
+        </nav>
+    </div>
+    
+    <!-- MAIN CONTENT: Dashboard statistics and recent activity -->
+    <div class="main">
+        <h1 style="margin-bottom: 24px;">Dashboard Admin</h1>
+        
+        <div class="annotation">
+            <strong>STATS CARDS:</strong> Display key metrics fetched from database.
+            Each card shows icon, value, and label. Updates in real-time.
+            CTA: Click card to view detailed breakdown.
+        </div>
+        
+        <!-- STATS GRID: Three metric cards -->
+        <!-- Purpose: Quick overview of system status -->
+        <div class="stats">
+            <div class="card">
+                <div style="font-size: 48px; margin-bottom: 8px;">👥</div>
+                <h3>150</h3>
+                <p>Total Siswa</p>
+            </div>
+            <div class="card">
+                <div style="font-size: 48px; margin-bottom: 8px;">💰</div>
+                <h3>Rp 3.000.000</h3>
+                <p>Pembayaran Hari Ini</p>
+            </div>
+            <div class="card">
+                <div style="font-size: 48px; margin-bottom: 8px;">📊</div>
+                <h3>Rp 45.000.000</h3>
+                <p>Pembayaran Bulan Ini</p>
+            </div>
+        </div>
+        
+        <div class="annotation">
+            <strong>RECENT PAYMENTS TABLE:</strong> Shows last 5 transactions.
+            Validation: Data sorted by timestamp DESC.
+            CTA: Click row to view receipt details.
+        </div>
+        
+        <!-- RECENT PAYMENTS: Latest transactions -->
+        <!-- Purpose: Monitor recent activity -->
+        <div class="card">
+            <h2 style="margin-bottom: 16px;">Pembayaran Terbaru</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>NISN</th>
+                        <th>Nama Siswa</th>
+                        <th>Bulan/Tahun</th>
+                        <th>Jumlah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>25/01/2026 10:30</td>
+                        <td>0051234567</td>
+                        <td>Ahmad Fauzi</td>
+                        <td>01/2026</td>
+                        <td>Rp 350.000</td>
+                    </tr>
+                    <tr>
+                        <td>25/01/2026 10:15</td>
+                        <td>0051234568</td>
+                        <td>Siti Aminah</td>
+                        <td>01/2026</td>
+                        <td>Rp 350.000</td>
+                    </tr>
+                    <tr>
+                        <td>25/01/2026 09:45</td>
+                        <td>0051234569</td>
+                        <td>Budi Hartono</td>
+                        <td>01/2026</td>
+                        <td>Rp 350.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

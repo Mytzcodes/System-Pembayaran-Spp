@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form Mock - Sistem SPP</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; background: #F3F4F6; padding: 24px; }
+        
+        /* Form Container - Main payment form wrapper */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        /* Form Group - Individual input field wrapper */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1F2937;
+        }
+        
+        /* Input Fields - Text, select, and textarea styling */
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #E5E7EB;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #1E3A8A;
+        }
+        
+        /* Autocomplete - Dropdown for student search */
+        .autocomplete {
+            position: relative;
+        }
+        
+        .autocomplete-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 6px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 10;
+            display: none;
+        }
+        
+        .autocomplete-results.active {
+            display: block;
+        }
+        
+        .autocomplete-item {
+            padding: 12px;
+            cursor: pointer;
+        }
+        
+        .autocomplete-item:hover {
+            background: #F3F4F6;
+        }
+        
+        /* Info Box - Student information display */
+        .info-box {
+            background: #EEF2FF;
+            border: 1px solid #C7D2FE;
+            padding: 16px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        .info-box p {
+            margin-bottom: 8px;
+        }
+        
+        /* Buttons - Primary and secondary actions */
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #1E3A8A;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: #6B7280;
+            color: white;
+            margin-left: 8px;
+        }
+        
+        /* Annotations - Design notes */
+        .annotation {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            padding: 12px;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1 style="margin-bottom: 24px;">Input Pembayaran SPP</h1>
+        
+        <div class="annotation">
+            <strong>AUTOCOMPLETE SEARCH:</strong> Real-time AJAX search for students.
+            Validation: Minimum 2 characters to trigger search.
+            CTA: Select student from dropdown to populate form.
+        </div>
+        
+        <!-- STUDENT SEARCH: Autocomplete input -->
+        <!-- Purpose: Find student by NISN, NIS, or name -->
+        <!-- Validation: Required, minimum 2 chars -->
+        <div class="form-group">
+            <label for="search">Cari Siswa (NISN/NIS/Nama) *</label>
+            <div class="autocomplete">
+                <input type="text" id="search" placeholder="Ketik untuk mencari..." autocomplete="off">
+                <div class="autocomplete-results active">
+                    <div class="autocomplete-item">0051234567 - Ahmad Fauzi (X RPL 1)</div>
+                    <div class="autocomplete-item">0051234568 - Siti Aminah (X RPL 1)</div>
+                    <div class="autocomplete-item">0051234569 - Budi Hartono (XI RPL 1)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="annotation">
+            <strong>STUDENT INFO BOX:</strong> Displays selected student details.
+            Purpose: Confirm correct student before payment.
+            Shows: NISN, Name, Class, SPP amount.
+        </div>
+        
+        <!-- STUDENT INFO: Display selected student details -->
+        <!-- Purpose: Confirmation before payment -->
+        <div class="info-box">
+            <h3 style="margin-bottom: 12px;">Informasi Siswa</h3>
+            <p><strong>NISN:</strong> 0051234567</p>
+            <p><strong>Nama:</strong> Ahmad Fauzi</p>
+            <p><strong>Kelas:</strong> X RPL 1</p>
+            <p><strong>Tarif SPP:</strong> Rp 350.000</p>
+        </div>
+        
+        <div class="annotation">
+            <strong>PAYMENT DETAILS:</strong> Month, year, and amount inputs.
+            Validation Rules:
+            - Month: Required, 1-12
+            - Year: Required, 2020-2030
+            - Amount: Required, min 0, step 1000
+            - Duplicate Check: Backend validates (month + year + NISN) uniqueness
+        </div>
+        
+        <!-- PAYMENT PERIOD: Month and year selection -->
+        <!-- Validation: Required fields, duplicate check on submit -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="month">Bulan *</label>
+                <select id="month" required>
+                    <option value="">Pilih Bulan</option>
+                    <option value="1">Januari</option>
+                    <option value="2">Februari</option>
+                    <option value="3">Maret</option>
+                    <option value="4">April</option>
+                    <option value="5">Mei</option>
+                    <option value="6">Juni</option>
+                    <option value="7">Juli</option>
+                    <option value="8">Agustus</option>
+                    <option value="9">September</option>
+                    <option value="10">Oktober</option>
+                    <option value="11">November</option>
+                    <option value="12">Desember</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="year">Tahun *</label>
+                <input type="number" id="year" value="2026" min="2020" max="2030" required>
+            </div>
+        </div>
+        
+        <!-- PAYMENT AMOUNT: Auto-filled from SPP tariff -->
+        <!-- Validation: Required, numeric, min 0 -->
+        <div class="form-group">
+            <label for="amount">Jumlah Bayar *</label>
+            <input type="number" id="amount" value="350000" min="0" step="1000" required>
+        </div>
+        
+        <!-- NOTES: Optional payment notes -->
+        <div class="form-group">
+            <label for="notes">Keterangan</label>
+            <textarea id="notes" rows="3" placeholder="Catatan tambahan (opsional)"></textarea>
+        </div>
+        
+        <div class="annotation">
+            <strong>FORM ACTIONS:</strong> Submit and reset buttons.
+            Submit Flow:
+            1. Client-side validation (required fields, format)
+            2. AJAX POST to backend
+            3. Backend calls sp_tambah_pembayaran stored procedure
+            4. If success: Redirect to receipt page with print modal
+            5. If duplicate: Show error toast "Pembayaran sudah ada"
+            6. If error: Show error message
+        </div>
+        
+        <!-- FORM ACTIONS: Submit and reset buttons -->
+        <!-- CTA: Primary action is "Proses Pembayaran" -->
+        <div style="margin-top: 24px;">
+            <button class="btn btn-primary">Proses Pembayaran</button>
+            <button class="btn btn-secondary">Reset</button>
+        </div>
+    </div>
+</body>
+</html>

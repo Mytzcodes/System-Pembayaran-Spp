@@ -1,0 +1,146 @@
+================================================================================
+                    WIREFRAMES - SISTEM PEMBAYARAN SPP
+================================================================================
+
+1. LOGIN PAGE
+================================================================================
++--------------------------------------------------------------------------+
+|                                                                          |
+|                            [LOGO SEKOLAH]                                |
+|                                                                          |
+|                      SISTEM PEMBAYARAN SPP                               |
+|                   Silakan login untuk melanjutkan                        |
+|                                                                          |
+|    +--------------------------------------------------------------+      |
+|    | Username: [________________________________]                 |      |
+|    +--------------------------------------------------------------+      |
+|                                                                          |
+|    +--------------------------------------------------------------+      |
+|    | Password: [________________________________]                 |      |
+|    +--------------------------------------------------------------+      |
+|                                                                          |
+|    +--------------------------------------------------------------+      |
+|    |                      [ LOGIN ]                               |      |
+|    +--------------------------------------------------------------+      |
+|                                                                          |
+|    Demo Credentials:                                                     |
+|    Admin: admin / Admin123!                                              |
+|    Petugas: petugas / Petugas123!                                        |
+|    Siswa: siswa1 / Siswa123!                                             |
+|                                                                          |
++--------------------------------------------------------------------------+
+
+CTA: "LOGIN" button - Primary action to authenticate user
+Microcopy: "Silakan login untuk melanjutkan" - Friendly instruction
+Validation: Required fields, email format check
+
+
+2. ADMIN DASHBOARD
+================================================================================
++--------------------------------------------------------------------------+
+| [☰] SISTEM PEMBAYARAN SPP              [🌙] [admin ▼]                   |
++--------------------------------------------------------------------------+
+| SIDEBAR          |  MAIN CONTENT                                        |
+|                  |                                                       |
+| 🏠 Dashboard     |  Dashboard Admin                                      |
+| 👥 Data Siswa    |                                                       |
+| 👤 Data Petugas  |  +---------------+  +---------------+  +-------------+ |
+| 🏫 Data Kelas    |  | 👥            |  | 💰            |  | 📊          | |
+| 💵 Data SPP      |  | Total Siswa   |  | Hari Ini      |  | Bulan Ini   | |
+| 📊 Laporan       |  | 150           |  | Rp 3.000.000  |  | Rp 45M      | |
+|                  |  +---------------+  +---------------+  +-------------+ |
+|                  |                                                       |
+|                  |  Pembayaran Terbaru                                   |
+|                  |  +---------------------------------------------------+ |
+|                  |  | Tgl    | NISN | Nama    | Bln/Thn | Jumlah      | |
+|                  |  |--------|------|---------|---------|-------------| |
+|                  |  | 25/01  | 0051 | Ahmad   | 01/2026 | Rp 350.000  | |
+|                  |  | 25/01  | 0052 | Siti    | 01/2026 | Rp 350.000  | |
+|                  |  +---------------------------------------------------+ |
+|                  |                                                       |
++------------------+-------------------------------------------------------+
+
+CTA: Sidebar navigation - Quick access to all admin functions
+Microcopy: "Pembayaran Terbaru" - Shows recent activity
+Stats Cards: Visual summary of key metrics
+
+
+3. PEMBAYARAN FORM (PETUGAS)
+================================================================================
++--------------------------------------------------------------------------+
+| [☰] SISTEM PEMBAYARAN SPP              [🌙] [petugas ▼]                 |
++--------------------------------------------------------------------------+
+| SIDEBAR          |  MAIN CONTENT                                        |
+|                  |                                                       |
+| 🏠 Dashboard     |  Input Pembayaran SPP                                 |
+| 💰 Input Bayar   |                                                       |
+| 📋 Riwayat       |  Cari Siswa (NISN/NIS/Nama)                           |
+|                  |  [_________________________] 🔍                        |
+|                  |  [Autocomplete dropdown appears here]                 |
+|                  |                                                       |
+|                  |  +---------------------------------------------------+ |
+|                  |  | Informasi Siswa                                   | |
+|                  |  | NISN: 0051234567                                  | |
+|                  |  | Nama: Ahmad Fauzi                                 | |
+|                  |  | Kelas: X RPL 1                                    | |
+|                  |  | Tarif SPP: Rp 350.000                             | |
+|                  |  +---------------------------------------------------+ |
+|                  |                                                       |
+|                  |  Bulan: [Januari ▼]    Tahun: [2026]                 |
+|                  |                                                       |
+|                  |  Jumlah Bayar: [350000]                               |
+|                  |                                                       |
+|                  |  Keterangan: [_____________________________]          |
+|                  |                                                       |
+|                  |  [ PROSES PEMBAYARAN ]  [ RESET ]                     |
+|                  |                                                       |
++------------------+-------------------------------------------------------+
+
+CTA: "PROSES PEMBAYARAN" - Primary action to submit payment
+Autocomplete: Real-time search for student data
+Validation: Duplicate payment check, required fields
+Success Flow: Redirect to receipt with print option
+
+
+4. SISWA HISTORY
+================================================================================
++--------------------------------------------------------------------------+
+| [☰] SISTEM PEMBAYARAN SPP              [🌙] [siswa1 ▼]                  |
++--------------------------------------------------------------------------+
+| SIDEBAR          |  MAIN CONTENT                                        |
+|                  |                                                       |
+| 🏠 Dashboard     |  Riwayat Pembayaran SPP                               |
+| 👤 Profile       |                                                       |
+| 📜 Riwayat       |  +---------------------------------------------------+ |
+|                  |  | Nama: Ahmad Fauzi                                 | |
+|                  |  | NISN: 0051234567                                  | |
+|                  |  | Kelas: X RPL 1                                    | |
+|                  |  +---------------------------------------------------+ |
+|                  |                                                       |
+|                  |  +---------------------------------------------------+ |
+|                  |  | Tgl Bayar | Bulan | Tahun | Jumlah | Petugas    | |
+|                  |  |-----------|-------|-------|--------|------------| |
+|                  |  | 25/01/26  | Jan   | 2026  | 350K   | Budi       | |
+|                  |  | 25/12/25  | Des   | 2025  | 350K   | Siti       | |
+|                  |  | 25/11/25  | Nov   | 2025  | 350K   | Budi       | |
+|                  |  |-----------|-------|-------|--------|------------| |
+|                  |  | Total Pembayaran:           Rp 1.050.000          | |
+|                  |  +---------------------------------------------------+ |
+|                  |                                                       |
++------------------+-------------------------------------------------------+
+
+CTA: View payment history - Read-only for students
+Microcopy: Shows complete payment record
+Summary: Total payments at bottom
+
+
+DESIGN NOTES:
+- Mobile-first responsive design
+- Sidebar collapses on small screens
+- Dark mode toggle available
+- Accessible with keyboard navigation
+- ARIA labels for screen readers
+- Focus indicators on interactive elements
+- Toast notifications for success/error messages
+- Modal dialogs for confirmations
+- Print-friendly receipt layout
